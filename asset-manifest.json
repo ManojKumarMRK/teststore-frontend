@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.f26d6d72.css",
+    "main.js": "/static/js/main.b80d7e7b.js",
+    "static/media/backgrounddesk.png": "/static/media/backgrounddesk.75a8c579cd9ebc6e0937.png",
+    "static/media/drinks.png": "/static/media/drinks.a765caf28da4812aab20.png",
+    "static/media/dinner.png": "/static/media/dinner.29be5909b7d024526909.png",
+    "static/media/breakfast.png": "/static/media/breakfast.d7abdf930d9a89e9bd31.png",
+    "static/media/snacks.png": "/static/media/snacks.a81da1279b17d58611ba.png",
+    "static/media/nightlife.png": "/static/media/nightlife.82d40c15dd63835ff6a2.png",
+    "static/media/lunch.png": "/static/media/lunch.d2665af4827d551a82f6.png",
+    "static/media/noodles.jpg": "/static/media/noodles.6caa952e89b902ac3a17.jpg",
+    "static/media/gobi manchurian.jpg": "/static/media/gobi manchurian.53e066b7a3d6ae96b1cb.jpg",
+    "index.html": "/index.html",
+    "main.f26d6d72.css.map": "/static/css/main.f26d6d72.css.map",
+    "main.b80d7e7b.js.map": "/static/js/main.b80d7e7b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f26d6d72.css",
+    "static/js/main.b80d7e7b.js"
+  ]
+}
