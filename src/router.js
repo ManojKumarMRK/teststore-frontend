@@ -8,13 +8,6 @@ import Pagenotfound from './components/404';
 
 const Router = () => {
 
-    useEffect(() => {
-        const script = document.createElement('script');
-        script.src = "<script type=\"text/javascript\" id=\"bikScript\" async src=\"https://api.staging.bik.ai/dm/storeFrontScriptsApiFunctions-serveBikScripts/?store=https://63c951acdc72e600093c8ec7--genuine-mousse-6c4307.netlify.app/\"></script>";
-        script.async = true;
-        document.head.appendChild(script);
-    }, []);
-
     return(
         <BrowserRouter>
 
