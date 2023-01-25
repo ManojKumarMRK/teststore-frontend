@@ -5,12 +5,12 @@ const axios = require('axios');
 class Filter extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {cities: []};
     this.handleLocationChange = this.handleLocationChange.bind(this);
     this.handleCuisineChange = this.handleCuisineChange.bind(this);
   }
-  
+
   //component did mount
   componentDidMount(){
     //initial call for data
@@ -20,18 +20,16 @@ class Filter extends Component {
       headers : {'Content-Type' : 'application/json'}
     }).then((res) =>{
       this.setState({cities : res.data.cities})
-      console.log(this.state)
     }).catch((err) => {
-      console.log(err)
     })
 
   }
-  
+
   //functions for handling filter and sort changes
   handleSortChange = (sortOrder) => {
-    this.props.onFilterDataChange("sort",sortOrder)   
+    this.props.onFilterDataChange("sort",sortOrder)
   }
-  
+
   handleCostChange = (min, max) => {
     this.props.onCostChange(min,max)
   }
@@ -43,15 +41,14 @@ class Filter extends Component {
   handleCuisineChange = (event) => {
     const target = event.target;
     var value = target.value;
-    console.log(value)
     if(target.checked){
-        
+
         this.props.onCuisineChange(value,0)  //add
     }else{
-        
+
         this.props.onCuisineChange(value,1)  //remove
     }
-    
+
   }
 
   render() {
@@ -61,7 +58,7 @@ class Filter extends Component {
         <p className="filtershead">Change Location</p>
         <div className="custom-select-search" >
             <select onChange={this.handleLocationChange} >
-              
+
               {
                         this.state.cities.map((city) =>{
                           if(city === this.props.selectedCity){
@@ -70,10 +67,10 @@ class Filter extends Component {
                           else{
                             return <option value={city}  >{city}</option>
                           }
-                        
+
                         })
                      }
-              
+
             </select>
           </div>
           <p className="filtershead">Cuisine</p>
@@ -87,7 +84,7 @@ class Filter extends Component {
           <label for="FastFood" className="checkboxl">Fast Food</label><br/>
           <input type="checkbox" id="StreetFood" name="StreetFood" className="checkbox" value="streetfood" onChange ={this.handleCuisineChange}/>
           <label for="StreetFood" className="checkboxl">Street Food</label><br/>
-          
+
           <p className="filtershead">Cost for two</p>
           <input type="radio" id="cost0" name="cost" className="checkbox" onChange ={()=>this.handleCostChange(0,500)}/>
           <label for="cost0" className="checkboxl" >Less than ₹500</label><br/>
@@ -99,17 +96,17 @@ class Filter extends Component {
           <label for="cost3" className="checkboxl" >₹1500 to ₹2000</label><br/>
           <input type="radio" id="cost4" name="cost" className="checkbox" onChange ={()=>this.handleCostChange(2001,99999)}/>
           <label for="cost4" className="checkboxl" >₹2000 +</label><br/>
-          
+
           <h4 className="filtermhead">Sort</h4>
           <input type="radio" id="sort1" name="sort" className="checkbox" onChange ={()=>this.handleSortChange(1)}/>
           <label for="sort1" className="checkboxl">Low to High</label><br/>
           <input type="radio" id="sort2" name="sort" className="checkbox" onChange ={()=>this.handleSortChange(-1)}/>
           <label for="sort2" className="checkboxl">High to Low</label><br/>
-          
+
     </div>
-        
+
       );
     }
 }
-  
+
 export default Filter;

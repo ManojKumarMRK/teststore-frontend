@@ -18,37 +18,36 @@ class Details extends Component {
     }
     return cuisarr;
   }
-  
+
 
   componentDidMount(){
     const values = queryString.parse(this.props.location.search)
-   
+
     axios({
       method: 'get',
       url: 'https://test-store-server-5choeye15-manojkumarmrk.vercel.app/restraunt/id/'+values.id,
       headers : {'Content-Type' : 'application/json'},
-      
+
     }).then((res) =>{
-      
+
       const newState = {name : res.data.restraunt.name,
                           address : res.data.restraunt.address,
                           imgurl : res.data.restraunt.thumb,
                         cost : res.data.restraunt.cost,
                       cuisine : this.cuisine(res.data.restraunt.Cuisine).join(),
-                      
+
                     }
-                    
-                  
+
+
       this.setState(newState)
-      
+
     }).catch((err) => {
-      console.log(err)
     })
-    
+
   }
 
-  
-  
+
+
   render() {
     const url = this.state.imgurl
     const values = queryString.parse(this.props.location.search)

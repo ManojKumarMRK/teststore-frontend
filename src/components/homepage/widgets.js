@@ -20,9 +20,7 @@ class Widgets extends Component {
       headers : {'Content-Type' : 'application/json'}
     }).then((res) =>{
       this.setState({widgets : res.data.widgets})
-      console.log(this.state)
     }).catch((err) => {
-      console.log(err)
     })
 
   }
@@ -32,24 +30,24 @@ class Widgets extends Component {
     const mealtypes = this.state.widgets
     const selectedCity = this.props.selCity
       return (
-        
+
         <main className="holders">
         <p className="quick">Quick Searches</p>
         <p className="quick_des">Discover restaurants by type of meals</p>
         <div className="container-fluid">
             <div className="row">
-             
+
           {mealtypes.map((item) => {
             return <Widget name={item.name} selectedCity={selectedCity}/>
           })}
-          
-              
+
+
               </div>
           </div>
     </main>
-       
+
       );
     }
 }
-  
+
 export default Widgets;

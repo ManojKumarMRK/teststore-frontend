@@ -26,12 +26,11 @@ class Detailtabs extends Component {
       method: 'get',
       url: 'https://test-store-server-5choeye15-manojkumarmrk.vercel.app/restraunt/id/'+id,
       headers : {'Content-Type' : 'application/json'},
-      
+
     }).then((res) =>{
       this.setState({menu : res.data.restraunt.menu})
-      
+
     }).catch((err) => {
-      console.log(err)
     })
   }
 
@@ -70,7 +69,7 @@ class Detailtabs extends Component {
     }
     this.setState({cart : newCart})
   };
-  
+
   //pay now segment handling
   paynow = () =>{
     const cart = this.state.cart
@@ -85,7 +84,7 @@ class Detailtabs extends Component {
           <div className='menuleft'>
           <p className='paynowpara'>{'Subtotal: '+subTotal+'₹'}</p>
           </div>
-          <div className='menuright'> 
+          <div className='menuright'>
           <button className='paynowbutt' onClick={this.payfunc}>Pay Now</button>
           </div>
         </div>
@@ -93,7 +92,7 @@ class Detailtabs extends Component {
       }
     }
   }
-  
+
   //opening contact form after clicking paynow
   payfunc = () =>{
     var AuthContext = this.context;
@@ -104,7 +103,7 @@ class Detailtabs extends Component {
       AuthContext.openModalS();
     }
   }
-  
+
   //close modal function
   closeModal = () =>{
    this.setState({isContactOpen : undefined})
@@ -115,9 +114,9 @@ class Detailtabs extends Component {
    this.setState({isContactOpen : 'success'})
 
   }
-    
+
   render() {
-    
+
       return (
         <React.Fragment>
         <Tabs>
@@ -126,7 +125,7 @@ class Detailtabs extends Component {
           <Tab>Contact</Tab>
           <Tab>Place Order Online</Tab>
         </TabList>
-     
+
         <TabPanel>
                 <h1 className="mainhead">About this place</h1>
                 <h2 className="subhead">Cuisine</h2>
@@ -143,7 +142,7 @@ class Detailtabs extends Component {
         </TabPanel>
         <TabPanel>
                 <h1 className="mainhead">{this.props.name+"'s Menu"}</h1>
-                
+
                 {this.state.menu.map((item) => {
                         return <MenuModal item ={item} add={this.addC} remove={this.removeC}/>
                 })}
@@ -156,11 +155,11 @@ class Detailtabs extends Component {
       <Modal isOpen={this.state.isContactOpen === 'success'} style={style.customStyles}>
           <Successmodal close = {this.closeModal} />
       </Modal>
-      
+
      </React.Fragment>
-        
+
       );
     }
   }Detailtabs.contextType = AuthContext;
-  
+
   export default Detailtabs;

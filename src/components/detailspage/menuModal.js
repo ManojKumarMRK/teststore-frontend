@@ -7,7 +7,7 @@ class menuModal extends Component {
     super(props);
     this.state = {buttonState : 0}
   }
-  
+
   //quantity decresing
   quandec = () =>{
     if(this.state.buttonState>0){
@@ -15,7 +15,7 @@ class menuModal extends Component {
       this.setState({buttonState: this.state.buttonState-1})
     }
   }
-  
+
   //quantity increasing
   quaninc = () =>{
     if(this.state.buttonState<10){
@@ -23,7 +23,7 @@ class menuModal extends Component {
       this.setState({buttonState: this.state.buttonState+1})
     }
   }
-  
+
   //managing order buttons
   orderButton = () =>{
     if(this.state.buttonState === 0){
@@ -39,7 +39,6 @@ class menuModal extends Component {
 
   }
   render() {
-    console.log(this.props.item)
       return (
         <div className='menuItem'>
           <div className="menuleft">
@@ -58,6 +57,5 @@ class menuModal extends Component {
     );
   }
 }
- 
+
 export default menuModal;
-  

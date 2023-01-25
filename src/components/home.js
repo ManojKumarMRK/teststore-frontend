@@ -16,24 +16,21 @@ class Home extends Component {
                   filteredres : [],
                   showoptions : false};
   }
-  
+
   componentDidMount(){
-   
+
     axios({
       method: 'get',
       url: 'https://test-store-server-5choeye15-manojkumarmrk.vercel.app/cities',
       headers : {'Content-Type' : 'application/json'}
     }).then((res) =>{
       this.setState({cities : res.data.cities})
-      console.log(this.state)
     }).catch((err) => {
-      console.log(err)
     })
 
   }
 
   handleLocationChange = (event) => {
-    console.log(event.target.value)
     this.setState({selectedCity : event.target.value})
     axios({
       method: 'get',
@@ -41,9 +38,8 @@ class Home extends Component {
       headers : {'Content-Type' : 'application/json'}
     }).then((res) =>{
       this.setState({resinCity : res.data.restraunts})
-      
+
     }).catch((err) => {
-      console.log(err)
     })
   }
 
@@ -53,10 +49,9 @@ class Home extends Component {
     var filteredres = allres.filter((res) => {
       return res.name.toLowerCase().indexOf(key.toLowerCase()) > -1
     })
-    
-    console.log(key, filteredres)
+
     this.setState({filteredres : filteredres,showoptions : true})
-    
+
   }
 
   showOption = () =>{
@@ -69,10 +64,10 @@ class Home extends Component {
                                                                                             name ={fil.name}
                                                                                             area = {fil.locality}
                                                                                             id ={fil._id}/>)}
-          
+
         </div>
       }
-     
+
     }else{
       return null
     }
@@ -82,15 +77,15 @@ class Home extends Component {
     this.setState({showoptions : false})
 
   }
-  
+
   render() {
     const cities = this.state.cities
     const selectedCity = this.state.selectedCity ? this.state.selectedCity : "delhi";
-    
+
       return (
         <React.Fragment>
-          
-      
+
+
         <div className="imgholder">
        <div className="layer">
            <div className="edu">e!</div>
@@ -103,29 +98,29 @@ class Home extends Component {
                         return <option value={city}  >{city}</option>
                         })
                      }
-    
+
                 </select></div>
                <div className="search2">
-                <div className="input-icons"> 
-                    <i className="fa fa-search icon"> 
-                  </i> 
-                    <input className="input-field" 
+                <div className="input-icons">
+                    <i className="fa fa-search icon">
+                  </i>
+                    <input className="input-field"
                            type="text"
                            placeholder="Search restaurants"
                            onChange={this.automate}
-                           onBlur = {this.closeOption}/> 
+                           onBlur = {this.closeOption}/>
                            {this.showOption()}
-                </div> 
+                </div>
                </div>
            </div>
-           
+
        </div>
     </div>
           <Widgets selCity={selectedCity}/>
         </React.Fragment>
-        
+
       );
     }
   }
-  
+
   export default Home;
