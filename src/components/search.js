@@ -38,7 +38,7 @@ class Search extends Component {
   axiosPagesCall = () => {
     axios({
       method: 'post',
-      url: 'https://test-store-server-5choeye15-manojkumarmrk.vercel.app/restraunt/pages',
+      url: 'https://test-store-server.vercel.app/restraunt/pages',
       headers : {'Content-Type' : 'application/json'},
       data: JSON.stringify(this.state.filterData)
     }).then((res) =>{
@@ -61,7 +61,7 @@ class Search extends Component {
   axiosResultCall = () =>{
     axios({
       method: 'post',
-      url: 'https://test-store-server-5choeye15-manojkumarmrk.vercel.app/restraunt/filter',
+      url: 'https://test-store-server.vercel.app/restraunt/filter',
       headers : {'Content-Type' : 'application/json'},
       data: JSON.stringify(this.state.filterData)
     }).then((res) =>{

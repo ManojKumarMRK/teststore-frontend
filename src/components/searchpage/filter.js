@@ -16,7 +16,7 @@ class Filter extends Component {
     //initial call for data
     axios({
       method: 'get',
-      url: 'https://test-store-server-5choeye15-manojkumarmrk.vercel.app/cities',
+      url: 'https://test-store-server.vercel.app/cities',
       headers : {'Content-Type' : 'application/json'}
     }).then((res) =>{
       this.setState({cities : res.data.cities})

@@ -27,7 +27,7 @@ class contactModal extends Component {
 
     axios({
       method: 'post',
-      url: 'https://test-store-server-5choeye15-manojkumarmrk.vercel.app/login',
+      url: 'https://test-store-server.vercel.app/login',
       headers : {'Content-Type' : 'application/json'},
       data : this.state
     }).then((res) =>{
@@ -51,7 +51,7 @@ class contactModal extends Component {
       })
       axios({
         method: 'post',
-        url: 'https://test-store-server-5choeye15-manojkumarmrk.vercel.app/order',
+        url: 'https://test-store-server.vercel.app/order',
         headers : {'Content-Type' : 'application/json', 'Authorization' : 'Bearer '+ AuthContext.token},
         data : {
           name : this.state.name, mobile : this.state.mobileno, address : this.state.address, items : newcart

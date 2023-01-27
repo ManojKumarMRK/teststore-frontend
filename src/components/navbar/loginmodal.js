@@ -26,7 +26,7 @@ class logInModal extends Component {
     
     axios({
       method: 'post',
-      url: 'https://test-store-server-5choeye15-manojkumarmrk.vercel.app/login',
+      url: 'https://test-store-server.vercel.app/login',
       headers : {'Content-Type' : 'application/json'},
       data : this.state
     }).then((res) =>{

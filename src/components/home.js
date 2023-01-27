@@ -21,7 +21,7 @@ class Home extends Component {
 
     axios({
       method: 'get',
-      url: 'https://test-store-server-5choeye15-manojkumarmrk.vercel.app/cities',
+      url: 'https://test-store-server.vercel.app/cities',
       headers : {'Content-Type' : 'application/json'}
     }).then((res) =>{
       this.setState({cities : res.data.cities})
@@ -34,7 +34,7 @@ class Home extends Component {
     this.setState({selectedCity : event.target.value})
     axios({
       method: 'get',
-      url: 'https://test-store-server-5choeye15-manojkumarmrk.vercel.app/restraunt/city/'+event.target.value,
+      url: 'https://test-store-server.vercel.app/restraunt/city/'+event.target.value,
       headers : {'Content-Type' : 'application/json'}
     }).then((res) =>{
       this.setState({resinCity : res.data.restraunts})

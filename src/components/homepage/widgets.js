@@ -16,7 +16,7 @@ class Widgets extends Component {
     //initial call for data
     axios({
       method: 'get',
-      url: 'https://test-store-server-5choeye15-manojkumarmrk.vercel.app/widget',
+      url: 'https://test-store-server.vercel.app/widget',
       headers : {'Content-Type' : 'application/json'}
     }).then((res) =>{
       this.setState({widgets : res.data.widgets})

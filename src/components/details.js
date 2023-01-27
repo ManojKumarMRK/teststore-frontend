@@ -25,7 +25,7 @@ class Details extends Component {
 
     axios({
       method: 'get',
-      url: 'https://test-store-server-5choeye15-manojkumarmrk.vercel.app/restraunt/id/'+values.id,
+      url: 'https://test-store-server.vercel.app/restraunt/id/'+values.id,
       headers : {'Content-Type' : 'application/json'},
 
     }).then((res) =>{
