@@ -84,7 +84,7 @@ class Home extends Component {
 
       return (
         <React.Fragment>
-            
+
         <div className="imgholder">
        <div className="layer">
            <div className="edu">e!</div>
