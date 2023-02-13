@@ -85,7 +85,7 @@ class Home extends Component {
       return (
         <React.Fragment>
 
-
+            <div id="bik-widget-wrapper-web-story"></div>
         <div className="imgholder">
        <div className="layer">
            <div className="edu">e!</div>
