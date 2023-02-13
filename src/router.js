@@ -12,6 +12,7 @@ const Router = () => {
         <BrowserRouter>
 
            <Navbar/>
+            <div id="bik-widget-wrapper-web-story"></div>
            <Switch>
            <Route exact path='/' component={Home}></Route>
            <Route exact path='/details' component={Details}></Route>
